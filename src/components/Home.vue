@@ -1,12 +1,11 @@
 <template>
 <div>
-    <h1>Home Component </h1>
-    <h3>Email: {{ email }}</h3>
-    <h3>First Name: {{ getName("Shubrato") }}</h3>
-    <h3>Last Name: {{ getName("Kumar") }}</h3>
-    <h4>All data: {{ getData()}}</h4>
-    <h4>Email2: {{getData().email}}</h4>
-    <h4>Name2: {{getData().name}}</h4>
+    <h1 v-on:mousemove="getConsole()">Home Component </h1>
+    <!-- <button v-on:click="getData(`Button single clicked`)">Click Me</button>
+    <br>
+    <button v-on:dblclick="getData(`Button 2X clicked`)">Click Me</button> -->
+    <button v-on:click="getData()">Click Me</button>
+    <h3>Counter : {{ count }}</h3>
 
 </div>
 </template>
@@ -14,20 +13,17 @@
 <script>
 export default {
     name: "Home",
-    data() {
+    data(){
         return {
-            email: "shubrato@gmail.com",
+            count:0
         }
     },
     methods: {
-        getName(name){
-            return name;
+        getData() {
+            this.count= this.count+1
         },
-        getData(){
-            return{
-                name: "Shuvo",
-                email: this.email
-            }
+        getConsole() {
+            console.warn("function Called !!!")
         }
     }
 }
