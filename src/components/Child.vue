@@ -5,8 +5,11 @@
         <!-- User data -->
         <br>
         <h2>User Data</h2>
-        <h3>{{user.name}}</h3>
-        <h3>{{user.email}}</h3>
+        <ul>
+            <li v-for="item in user" key="item.email">
+                Name : {{item.name}} and Email : {{item.email}}
+            </li>
+        </ul>
         
     </div>
 </template>
@@ -15,7 +18,7 @@ export default {
     name: "Child",
     props: {
         name: String,
-        user: Object
+        user: Array
     }    
 }
 </script>

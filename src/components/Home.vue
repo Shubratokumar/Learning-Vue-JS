@@ -13,13 +13,8 @@ export default {
         Child
     },
     data() {
-        return {
-            user:{
-                name: "Shubrato",
-                email: "shubrato@gmail.com"
-            }
-            
-            /* user: [
+        return {            
+            user: [
                 {
                     name: "Shubrato",
                     email: "shubrato@gmail.com"
@@ -32,7 +27,7 @@ export default {
                     name: "Shovan",
                     email: "shovan@gmail.com"
                 },
-            ] */
+            ]
         }
     }
 }
