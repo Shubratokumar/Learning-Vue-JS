@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>Pass data from parent to child component</h1>
-    <Child name="Data passed from parent to child component" :user="user"/>  
+    <Child name="Data passed from parent to child component" :user="user" :getData="getData"/>  
 </div>
 </template>
 
@@ -28,6 +28,11 @@ export default {
                     email: "shovan@gmail.com"
                 },
             ]
+        }
+    },
+    methods: {
+        getData(){
+            alert("Function called at child component which passed from parent component.")
         }
     }
 }
