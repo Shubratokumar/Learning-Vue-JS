@@ -1,9 +1,21 @@
 <template>
 <div>
-    <h1>If-else conditions in Vue JS</h1>
-    <h2 v-if="show">If-else condition</h2>
-    <!-- <h2 v-else>Else Condition</h2> -->
-    <button v-on:click="show=!show">{{show ? "Hide" : "Show"}}</button>
+    <h1>For Loop in Vue JS</h1>
+    <!-- simple array for loop -->
+    <h3>Technology List : </h3>
+    <ul>
+        <li v-for="item in technology" :key="item">
+            {{item}}
+        </li>
+    </ul>
+    <br>
+    <br>
+    <h3>User Information List : </h3>
+    <ul>
+        <li v-for="item in user" :key="item.email">
+            Name : {{item.name}} and Email : {{item.email}}
+        </li>
+    </ul>
 
 </div>
 </template>
@@ -13,7 +25,22 @@ export default {
     name: "Home",
     data() {
         return {
-            show: false,
+            technology: [ "JS","React","Vue","Angular"," Node", " PHP"],
+            user: [
+                {
+                    name: "Shubrato",
+                    email: "shubrato@gmail.com"
+                },
+                {
+                    name: "Shuvo",
+                    email: "shuvo@gmail.com"
+                },
+                {
+                    name: "Shovan",
+                    email: "shovan@gmail.com"
+                },
+
+            ]
         }
     }
 }
