@@ -1,38 +1,23 @@
 <template>
 <div>
-    <h1>Reuse Componet</h1>
-    <ul>
-        <li v-for="item in users" :key="item.name">
-            <User :data="item" :getData="getData"/>
-        </li>
-    </ul>
+    <h1>HTML Binding</h1>
+    <h3>Name: {{text}}</h3>
+    <div v-html="tag"></div>
+    <div v-html="email"></div>
+
 </div>
 </template>
 
 <script>
-import User from "./User.vue"
 export default {
     name: "Home",
-    components: {
-        User
-    },
     data(){
         return{
-            users:[
-                { name: "Shubrato",email: "shubrato@gmail.com"},
-                { name: "Shuvo",email: "shuvo@gmail.com"},
-                { name: "Shovan",email: "shovan@gmail.com"},
-                { name: "Tonmoy",email: "tonmoy@gmail.com"},
-                { name: "JH",email: "jh@gmail.com"},
-                { name: "SK",email: "sk@gmail.com"},
-            ]
+            text: "Anil Sidhu",
+            tag: "Name: <h4> Shubrato </h4>",
+            email: "Email: <h4> Shuvo@gmil.com </h4>",
         }
     },
-    methods:{
-        getData(name){
-            alert(`Function called by ${name}`)
-        }
-    }
     
 }
 </script>
