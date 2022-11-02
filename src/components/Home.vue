@@ -2,8 +2,8 @@
 <div>
     <h1>If-else conditions in Vue JS</h1>
     <h2 v-if="show">If-else condition</h2>
-    <h2 v-else>Else Condition</h2>
-    <button v-on:click="show">If-else toggle</button>
+    <!-- <h2 v-else>Else Condition</h2> -->
+    <button v-on:click="show=!show">{{show ? "Hide" : "Show"}}</button>
 
 </div>
 </template>
