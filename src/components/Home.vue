@@ -1,7 +1,13 @@
 <template>
 <div>
-    <input type="text" v-model="data">
-    <h4>Data: {{data}}</h4>
+    <h1>Get input value</h1>
+    <input type="text" placeholder="Enter your email here" v-model="email">
+    <br/>
+    <br/>
+    <input type="password" placeholder="Enter your password here" v-model="password">
+    <br/>
+    <br/>
+    <button v-on:click="getData()" type="button">Get Values</button>
 
 </div>
 </template>
@@ -10,8 +16,14 @@
 export default {
     name: "Home",
     data(){
-        return{
-            data: "No Data Here!"
+        return {
+            email: null,
+            password: null,
+        }
+    },
+    methods: {
+        getData(){
+            console.log("Values:", this.email, this.password)
         }
     }
 }
