@@ -1,32 +1,25 @@
 <template>
 <div>
-    <h1>For Loop in Vue JS</h1>
-    <!-- simple array for loop -->
-    <h3>Technology List : </h3>
-    <ul>
-        <li v-for="item in technology" :key="item">
-            {{item}}
-        </li>
-    </ul>
-    <br>
-    <br>
-    <h3>User Information List : </h3>
-    <ul>
-        <li v-for="item in user" :key="item.email">
-            Name : {{item.name}} and Email : {{item.email}}
-        </li>
-    </ul>
-
+    <h1>Pass data from parent to child component</h1>
+    <Child name="Data passed from parent to child component" :user="user"/>  
 </div>
 </template>
 
 <script>
+import Child from "./Child.vue"
 export default {
     name: "Home",
+    components: {
+        Child
+    },
     data() {
         return {
-            technology: [ "JS","React","Vue","Angular"," Node", " PHP"],
-            user: [
+            user:{
+                name: "Shubrato",
+                email: "shubrato@gmail.com"
+            }
+            
+            /* user: [
                 {
                     name: "Shubrato",
                     email: "shubrato@gmail.com"
@@ -39,8 +32,7 @@ export default {
                     name: "Shovan",
                     email: "shovan@gmail.com"
                 },
-
-            ]
+            ] */
         }
     }
 }
