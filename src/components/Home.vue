@@ -26,7 +26,7 @@ export default {
         getData(){
             return{
                 name: "Shuvo",
-                email: "shuvo@gmail.com"
+                email: this.email
             }
         }
     }
