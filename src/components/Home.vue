@@ -1,8 +1,8 @@
 <template>
 <div>
     <h1>Props in Vue JS </h1>
-    <Teacher name="Jhanka"/>
-    <Student name="Shubrato"/>
+    <Teacher :name="namet"/>
+    <Student :name="names"/>
 
 </div>
 </template>
@@ -18,6 +18,8 @@ export default {
     },
     data() {
         return {
+            namet: "Jhankar",
+            names: "Shuvo"
 
         }
     }
