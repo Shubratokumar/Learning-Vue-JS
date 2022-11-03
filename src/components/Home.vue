@@ -1,7 +1,11 @@
 <template>
 <div>
     <h1>Simple Form</h1>
-    <p>{{form}}</p>
+    <ul>
+        <li v-for="item in error" v-bind:key="item">
+            {{item}} not provided.
+        </li>
+    </ul>
     <form action="">
         <label for="">Email :</label>
         <input type="text" placeholder="Enter Email" v-model="form.email">
@@ -10,10 +14,10 @@
         <input type="password" placeholder="Enter Password" v-model="form.password">
         <br>
         <label for="">Country :</label>
-        <select  v-model="form.country">
-            <option >India</option>
-            <option >Bangladesh</option>
-            <option >USA</option>
+        <select v-model="form.country">
+            <option>India</option>
+            <option>Bangladesh</option>
+            <option>USA</option>
         </select>
         <br>
         <h4>Technology: </h4>
@@ -30,7 +34,7 @@
         <label for="">Female :</label>
         <input type="radio" value="Female" name="gender" v-model="form.gender">
         <br>
-        <button v-on:click="login">Login</button>
+        <button type="button" v-on:click="login">Login</button>
     </form>
 
 </div>
@@ -39,20 +43,30 @@
 <script>
 export default {
     name: "Home",
-    data(){
-        return{
+    data() {
+        return {
             form: {
                 email: "",
                 password: "",
                 country: "",
                 technology: [],
                 gender: ""
-            }
+            },
+            error: [],
         }
     },
     methods: {
         login() {
-            console.log("Login Data", this.form)
+            this.error = [];
+            for (const item in this.form) {
+                if (this.form[item] === "" || this.form[item].length === 0) {
+                    this.error.push(item)
+                }
+            }
+            if (this.error.length === 0) {
+                alert("Successfully form submitted!")
+            }
+            console.log(this.form, this.error)
         }
     }
 }
