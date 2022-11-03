@@ -1,27 +1,24 @@
 <template>
 <div>
-    <h1>Class Binding</h1>
-    <h3 :class="applyStyle">This is Home</h3>
-    <button v-on:click="colorfull=!colorfull">{{colorfull ? "Remove style" : "Apply style"}}</button>
+    <h1>Props in Vue JS </h1>
+    <Teacher name="Jhanka"/>
+    <Student name="Shubrato"/>
 
 </div>
 </template>
 
 <script>
+import Student from "./Student.vue";
+import Teacher from "./Teacher.vue";
 export default {
     name: "Home",
+    components: {
+        Student,
+        Teacher
+    },
     data() {
         return {
-            colorfull: false,
-        }
-    },
-    computed: {
-        applyStyle() {
-            return {
-                purple: this.colorfull,
-                err: true,
-                other: true
-            }
+
         }
     }
 
