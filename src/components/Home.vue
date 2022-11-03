@@ -1,11 +1,11 @@
 <template>
 <div>
     <h1>Watchers</h1>
-    <h3>Counter : {{count}}</h3>   
+    <h3>Counter : {{count}}</h3>
     <button v-on:click="count=count+1">+</button>
-    
+
     <button v-on:click="count=count-1">-</button>
-    
+
 </div>
 </template>
 
@@ -16,11 +16,14 @@ export default {
         return {
             count: 0
         }
-    }, 
-    watch:{
-        count()
-        {
-            alert("value changed")
+    },
+    watch: {
+        count(val, prev) {
+            // conditional watcher
+            if (val > 5 && val > prev) {
+                this.count = 0
+            }
+            // alert("Stop value changing")
         }
     }
 }
