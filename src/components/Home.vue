@@ -1,24 +1,35 @@
 <template>
 <div>
-    <h1>Data transfer child to parent component</h1>
-    <User :getUser="getUserName" />
+    <h1>Simple Form</h1>
+    <form action="">
+        <label for="">Email :</label>
+        <input type="text" placeholder="Enter Email" v-model="form.email">
+        <br>
+        <label for="">Password :</label>
+        <input type="password" placeholder="Enter Password" v-model="form.password">
+        <br>
+        <button v-on:click="login">Login</button>
+    </form>
 
 </div>
 </template>
 
 <script>
-import User from "./User.vue";
 export default {
     name: "Home",
-    components: {
-        User,
+    data(){
+        return{
+            form: {
+                email: "",
+                password: ""
+            }
+        }
     },
     methods: {
-        getUserName(data) {
-            alert(data)
+        login() {
+            console.log("Login Data", this.form)
         }
     }
-
 }
 </script>
 
