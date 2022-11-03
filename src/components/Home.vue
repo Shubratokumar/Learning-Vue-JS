@@ -1,15 +1,17 @@
 <template>
 <div>
-    <h1>Form Modifiers</h1>
-    <input type="number" v-model.number="data">
-    <h3>Data is: {{data}}</h3>
-    <h3>Data type is: {{typeof(data)}}</h3>
+    <h1>Non Props Data</h1>
+    <User data="Some Data" id="user-cmp"/>    
 </div>
 </template>
 
 <script>
+import User from "./User.vue";
 export default {
     name: "Home",
+    components:{
+        User
+    },
     data() {
         return {
             data: ""
