@@ -7,7 +7,9 @@
     <h3>{{(dollors * tkVal) - discount}}</h3>
     <!-- computed property -->
     <h3>{{getResult}}</h3>   
-    <h3>{{getResult}}</h3>   
+    <h3>{{getResult}}</h3> 
+    <!-- using methods must call the function  -->
+    <h3>{{getResultMethods()}}</h3>   
 </div>
 </template>
 
@@ -19,6 +21,11 @@ export default {
             dollors: 100,
             tkVal: 95,
             discount: 10
+        }
+    },
+    methods: {
+        getResultMethods(){
+            return (this.dollors * this.tkVal) - this.discount
         }
     },
     computed: {
