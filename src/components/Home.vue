@@ -1,26 +1,21 @@
 <template>
 <div>
-    <h1>Props in Vue JS </h1>
-    <Teacher :name="namet"/>
-    <Student :name="names"/>
+    <h1>Data transfer child to parent component</h1>
+    <User :getUser="getUserName" />
 
 </div>
 </template>
 
 <script>
-import Student from "./Student.vue";
-import Teacher from "./Teacher.vue";
+import User from "./User.vue";
 export default {
     name: "Home",
     components: {
-        Student,
-        Teacher
+        User,
     },
-    data() {
-        return {
-            namet: "Jhankar",
-            names: "Shuvo"
-
+    methods: {
+        getUserName(data) {
+            alert(data)
         }
     }
 
