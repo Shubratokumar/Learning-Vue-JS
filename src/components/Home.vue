@@ -1,15 +1,11 @@
 <template>
 <div>
-    <h1>Computed Property</h1>
-    <!-- Normal useage -->
-    <h3>{{(dollors * tkVal) - discount}}</h3>   
-    <h3>{{(dollors * tkVal) - discount}}</h3>   
-    <h3>{{(dollors * tkVal) - discount}}</h3>
-    <!-- computed property -->
-    <h3>{{getResult}}</h3>   
-    <h3>{{getResult}}</h3> 
-    <!-- using methods must call the function  -->
-    <h3>{{getResultMethods()}}</h3>   
+    <h1>Watchers</h1>
+    <h3>Counter : {{count}}</h3>   
+    <button v-on:click="count=count+1">+</button>
+    
+    <button v-on:click="count=count-1">-</button>
+    
 </div>
 </template>
 
@@ -18,22 +14,15 @@ export default {
     name: "Home",
     data() {
         return {
-            dollors: 100,
-            tkVal: 95,
-            discount: 10
+            count: 0
         }
-    },
-    methods: {
-        getResultMethods(){
-            return (this.dollors * this.tkVal) - this.discount
-        }
-    },
-    computed: {
-        getResult(){
-             return (this.dollors * this.tkVal) - this.discount
+    }, 
+    watch:{
+        count()
+        {
+            alert("value changed")
         }
     }
-
 }
 </script>
 
