@@ -1,8 +1,9 @@
 <template>
 <div>
     <h1>Form Modifiers</h1>
-    <input type="text" v-model.trim="data">
+    <input type="number" v-model.number="data">
     <h3>Data is: {{data}}</h3>
+    <h3>Data type is: {{typeof(data)}}</h3>
 </div>
 </template>
 
