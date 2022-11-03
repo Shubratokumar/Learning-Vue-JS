@@ -1,22 +1,32 @@
 <template>
 <div>
-    <h1>Non Props Data</h1>
-    <User data="Some Data" id="user-cmp"/>    
+    <h1>Computed Property</h1>
+    <!-- Normal useage -->
+    <h3>{{(dollors * tkVal) - discount}}</h3>   
+    <h3>{{(dollors * tkVal) - discount}}</h3>   
+    <h3>{{(dollors * tkVal) - discount}}</h3>
+    <!-- computed property -->
+    <h3>{{getResult}}</h3>   
+    <h3>{{getResult}}</h3>   
 </div>
 </template>
 
 <script>
-import User from "./User.vue";
 export default {
     name: "Home",
-    components:{
-        User
-    },
     data() {
         return {
-            data: ""
+            dollors: 100,
+            tkVal: 95,
+            discount: 10
+        }
+    },
+    computed: {
+        getResult(){
+             return (this.dollors * this.tkVal) - this.discount
         }
     }
+
 }
 </script>
 
