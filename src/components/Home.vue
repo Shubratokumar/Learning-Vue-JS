@@ -1,10 +1,28 @@
 <template>
 <div>
-    <h1>Slots in Vue js 3</h1>
-    <Child1><h2>Shubrato</h2></Child1>
-    <Child1><a href="#">Shubrato with link</a></Child1>
-    <Child1><img src="https://images.unsplash.com/photo-1526547541286-73a7aaa08f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=500&q=80"/></Child1>
-
+    <h1>Multiple Slots in Vue js 3</h1>
+    <Child1>
+        <template v-slot:header>
+            <h2>Shubrato</h2>
+        </template>
+        <template v-slot:main>
+            <p>A Vue JS product</p>
+        </template>
+        <template v-slot:footer>
+            <button>Buy now</button>
+        </template>
+    </Child1>
+    <Child1>
+        <template v-slot:header>
+            <h2>Shubrato Kumar</h2>
+        </template>
+        <template v-slot:main>
+            <p>A React JS product</p>
+        </template>
+        <template v-slot:footer>
+            <button>Buy now</button>
+        </template>
+    </Child1>
 </div>
 </template>
 
