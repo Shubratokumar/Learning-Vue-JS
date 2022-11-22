@@ -1,41 +1,27 @@
 <template>
-<div>
-    <h1>Multiple Slots in Vue js 3</h1>
-    <Child1>
-        <template v-slot:header>
-            <h2>Shubrato</h2>
-        </template>
-        <template v-slot:main>
-            <p>A Vue JS product</p>
-        </template>
-        <template v-slot:footer>
-            <button>Buy now</button>
-        </template>
-    </Child1>
-    <Child1>
-        <template v-slot:header>
-            <h2>Shubrato Kumar</h2>
-        </template>
-        <template v-slot:main>
-            <p>A React JS product</p>
-        </template>
-        <template v-slot:footer>
-            <button>Buy now</button>
-        </template>
-    </Child1>
-</div>
+    <div>
+        <h1>Dynamic Components in Vue js 3</h1>
+        <button @click="tab='Php'">Load Php</button>
+        <button @click="tab='JavaScript'">Load JavaScript</button>
+        <button @click="tab='Java'">Load Java</button>
+        <button @click="tab='Node'">Load Node</button>
+        <component :is="tab" />
+    </div>
 </template>
 
 <script>
-import Child1 from "./Child1.vue"
+import Php from "./Php.vue";
+import JavaScript from "./JavaScript.vue";
+import Node from "./Node.vue";
+import Java from "./Java.vue";
 export default {
     name: "Home",
     components:{
-        Child1
+        Php, JavaScript, Node, Java
     },
     data() {
         return {
-
+            tab: "JavaScript"
         }
     },    
 }
