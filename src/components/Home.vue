@@ -1,29 +1,24 @@
 <template>
-    <div>
-        <h1>Dynamic Components in Vue js 3</h1>
-        <button @click="tab='Php'">Load Php</button>
-        <button @click="tab='JavaScript'">Load JavaScript</button>
-        <button @click="tab='Java'">Load Java</button>
-        <button @click="tab='Node'">Load Node</button>
-        <component :is="tab" />
-    </div>
+<div>
+    <h1>Teleport Components in Vue js 3</h1>
+    <teleport to='#footer'>
+        <Footer />
+    </teleport>
+</div>
 </template>
 
 <script>
-import Php from "./Php.vue";
-import JavaScript from "./JavaScript.vue";
-import Node from "./Node.vue";
-import Java from "./Java.vue";
+import Footer from "./Footer.vue";
 export default {
     name: "Home",
-    components:{
-        Php, JavaScript, Node, Java
+    components: {
+        Footer
     },
     data() {
         return {
-            tab: "JavaScript"
+
         }
-    },    
+    },
 }
 </script>
 

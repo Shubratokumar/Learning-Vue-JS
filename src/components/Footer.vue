@@ -1,12 +1,10 @@
 <template lang="">
-    <div>
-        <h1>Java content</h1>
-    </div>
+    <h2>Footer</h2>
+    <p>Copy Right @ Shubrato Kumar</p>
 </template>
 <script>
 export default {
-    name: "Java"
-    
+    name: Footer
 }
 </script>
 <style lang="">
